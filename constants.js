@@ -1,0 +1,2 @@
+export const ALCHEMY_API_KEY_MAINNET = ""; // get alchemy API key for free at https://www.alchemy.com/
+export const ALCHEMY_API_KEY_GOERLI = ""; // get alchemy API key for free at https://www.alchemy.com/

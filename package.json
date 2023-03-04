@@ -1,0 +1,14 @@
+{
+  "name": "ethers_demo",
+  "version": "1.0.0",
+  "description": "A demo for interacting with Ethereum using Javascript",
+  "main": "1-read-wallet-balance.js",
+  "scripts": {
+  },
+  "author": "Zach Couchman",
+  "license": "ISC",
+  "dependencies": {
+    "ethers": "5.4"
+  },
+  "type": "module"
+}
