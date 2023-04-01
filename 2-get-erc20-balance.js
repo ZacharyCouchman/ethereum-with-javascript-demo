@@ -8,10 +8,10 @@ const rpcUrl = `https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY_MAINNET}`
 const imxERC20TokenAddress = "0xF57e7e7C23978C3cAEC3C3548E3D615c346e79fF"; // Immutable X ERC20 token contract address
 
 const contractABI = [
-  "function name() public view returns (string memory)",
-  "function symbol() public view returns (string memory)",
-  "function decimals() public view returns (uint8)",
-  "function balanceOf(address account) external view returns (uint256)"
+  "function name() view returns (string)",
+  "function symbol() view returns (string)",
+  "function decimals() view returns (uint8)",
+  "function balanceOf(address account) view returns (uint256)"
 ];
 
 async function getERC20Balance(){

@@ -7,14 +7,14 @@ const rpcUrl = `https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY_MAINNET}`
 const imxERC20TokenAddress = "0xF57e7e7C23978C3cAEC3C3548E3D615c346e79fF";
 
 const contractABI = [
-  "function name() public view returns (string memory)",
-  "function symbol() public view returns (string memory)",
-  "function decimals() public view returns (uint8)",
-  "function balanceOf(address account) external view returns (uint256)",
+  "function name() view returns (string)",
+  "function symbol() view returns (string)",
+  "function decimals() view returns (uint8)",
+  "function balanceOf(address account) view returns (uint256)",
   "event Transfer(address indexed from, address indexed to, uint256 value)"
 ];
 
-async function listenToEvents() {
+async function queryEvents() {
   const provider = new ethers.providers.JsonRpcProvider(rpcUrl);
 
   const contract = new ethers.Contract(imxERC20TokenAddress, contractABI, provider);
@@ -26,4 +26,4 @@ async function listenToEvents() {
   const logTransfer = (event) => console.log(`${event.args.from} transferred ${formatUnits(event.args.value, 18)} IMX to ${event.args.to}`);
   events.forEach(logTransfer);
 }
-listenToEvents();
+queryEvents();
